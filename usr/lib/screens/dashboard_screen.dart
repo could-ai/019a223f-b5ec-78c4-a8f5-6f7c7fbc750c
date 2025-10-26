@@ -173,7 +173,8 @@ class DashboardScreen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-      ),n      child: Column(
+      ),
+      child: Column(
         children: [
           Icon(icon),
           const SizedBox(height: 8),

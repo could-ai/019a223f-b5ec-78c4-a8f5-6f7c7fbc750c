@@ -46,8 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
   
-  Future<void> _verifyOtp() async {
-    if (_otpController.text.isEmpty) return;
+  Future<void> _verifyOtp(String otp) async {
+    if (otp.isEmpty) return;
     
     setState(() {
       _isLoading = true;
@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    bool success = await authProvider.verifyOtp(_phoneController.text, _otpController.text);
+    bool success = await authProvider.verifyOtp(_phoneController.text, otp);
     
     setState(() {
       _isLoading = false;
@@ -124,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _isLoading ? null : (_otpSent ? _verifyOtp : _sendOtp),
+                onPressed: _isLoading ? null : (_otpSent ? () => _verifyOtp(_otpController.text) : _sendOtp),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),

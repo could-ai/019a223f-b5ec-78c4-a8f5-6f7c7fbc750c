@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import '../models/product.dart';
+
 class OrderItem {
   final String productId;
   int quantity;

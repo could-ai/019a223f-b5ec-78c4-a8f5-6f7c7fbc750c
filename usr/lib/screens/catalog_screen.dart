@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/product_provider.dart';
 import '../providers/order_provider.dart';
 import '../models/product.dart';
+import '../models/order.dart';
 import '../widgets/product_card.dart';
 
 class CatalogScreen extends StatefulWidget {

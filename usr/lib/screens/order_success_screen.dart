@@ -4,7 +4,11 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:provider/provider.dart';
 import '../providers/order_provider.dart';
-import '../services/notification_service.dart';
+// import '../services/notification_service.dart'; // Commented out
+
+import 'package:printing/printing.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
 
 class OrderSuccessScreen extends StatelessWidget {
   const OrderSuccessScreen({super.key});
@@ -15,10 +19,10 @@ class OrderSuccessScreen extends StatelessWidget {
     final order = orderProvider.orders.last; // Assuming the last order is the submitted one
     
     // Send notification
-    NotificationService().showLocalNotification(
-      'Order Submitted',
-      'Your order #${order.id} has been submitted successfully!',
-    );
+    // NotificationService().showLocalNotification( // Commented out
+    //   'Order Submitted',
+    //   'Your order #${order.id} has been submitted successfully!',
+    // );
     
     return Scaffold(
       body: Center(

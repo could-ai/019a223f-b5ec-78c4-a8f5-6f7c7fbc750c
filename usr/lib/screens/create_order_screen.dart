@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/order_provider.dart';
 import '../providers/product_provider.dart';
 import '../widgets/product_card.dart';
+import '../models/order.dart';
 
 class CreateOrderScreen extends StatefulWidget {
   const CreateOrderScreen({super.key});
@@ -19,7 +20,7 @@ class _CreateOrderScreenState extends State<CreateOrderScreen> {
   void initState() {
     super.initState();
     final productProvider = Provider.of<ProductProvider>(context, listen: false);
-    // productProvider.loadProducts('area_id'); // TODO: Load products for SR's area
+    // productProvider.loadProducts('area_id'); // TODO: Get from user
   }
 
   @override
@@ -127,16 +128,16 @@ class _CreateOrderScreenState extends State<CreateOrderScreen> {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '${orderProvider.currentOrder!.items.length} items',
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Total: ৳${orderProvider.currentOrder!.total.toStringAsFixed(2)}',
-                        ),
-                      ],
-                    ),
+                    children: [
+                      Text(
+                        '${orderProvider.currentOrder!.items.length} items',
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'Total: ৳${orderProvider.currentOrder!.total.toStringAsFixed(2)}',
+                      ),
+                    ],
+                  ),
                   ),
                   ElevatedButton(
                     onPressed: () => Navigator.pushNamed(context, '/order_review'),
