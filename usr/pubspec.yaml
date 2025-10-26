@@ -1,5 +1,5 @@
 name: couldai_user_app
-description: "A new Flutter project."
+description: "SR & Dealer App - Flutter mobile application for Sales Representatives and Dealers with product ordering and management features."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -13,7 +13,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # Read more about Android versioning at https://developer.android.com/studio/publish/versioning
 # In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
 # Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
@@ -34,6 +34,44 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+
+  # Firebase for authentication (Phone OTP) and push notifications
+  firebase_core: ^3.1.0
+  firebase_auth: ^5.1.0
+  firebase_messaging: ^15.0.0
+
+  # State management
+  provider: ^6.1.2
+
+  # HTTP client for API calls
+  http: ^1.2.1
+
+  # Local storage for offline mode and caching
+  shared_preferences: ^2.3.0
+  sqflite: ^2.3.3
+
+  # PDF generation and viewing
+  pdf: ^3.10.7
+  printing: ^5.13.3
+  open_file: ^3.3.2
+
+  # Image handling
+  cached_network_image: ^3.3.1
+
+  # Maps integration (optional for SR route logging)
+  google_maps_flutter: ^2.7.0
+
+  # Search functionality
+  flutter_typeahead: ^5.0.2
+
+  # Date and time formatting
+  intl: ^0.19.0
+
+  # URL launcher for opening PDFs
+  url_launcher: ^6.3.0
+
+  # Permission handler for maps and notifications
+  permission_handler: ^11.3.1
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +99,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  #   - assets/images/
+  #   - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
